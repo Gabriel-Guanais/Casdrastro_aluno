@@ -1,16 +1,18 @@
+class Pessoa:
+    def __init__(self, nome, idade, ):
+        self.nome = nome
+        self.idade = idade
 
-class Student:
-    def __init__(self,name, age,registration):
-        self.name = name
-        self.age = age
-        self.registration = registration
+
+
+class Student(Pessoa):
+    def __init__(self, nome, idade, matricula):
+        Pessoa.__init__(nome, idade,matricula)
+        self.matricula = matricula
         
     def display_information(self):
-        print(f'Name: {self.name} Age: {self.age} Registration: {self.registration}')
+        print(f'Name: {self.nome} Age: {self.idade} matricula: {self.matricula}')
         
         
-class Teacher:
-    def __init__(self, name, age, id):
-        self.name = name
-        self.age = age
-        self.id = id
+aluno1 = Student('gabriel','12', '123233')
+aluno1.display_information()
